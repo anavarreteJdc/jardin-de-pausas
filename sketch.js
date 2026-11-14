@@ -1,7 +1,7 @@
 /*
  * «Jardín de pausas» — Extensión de Firefox (Manifest V3, popup)
  * Autor: Arturo Navarrete Jiménez de Cisneros (2026)
- * UOC · 20.671 Desarrollo de aplicaciones interactivas · Reto R3 «Extensión web»
+ * UOC · Desarrollo de aplicaciones interactivas · Reto R3 «Extensión web»
  *
  * Temporizador de enfoque y descanso basado en mi reloj «Jardín de horas» (R1).
  * Mientras te concentras, la flor gana pétalos; cuando descansas, los suelta

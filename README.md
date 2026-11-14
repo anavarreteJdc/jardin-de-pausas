@@ -11,7 +11,7 @@ popup de 300 × 150 px con [p5.js 2.4](https://p5js.org/).
 |---|---|
 | ![Enfoque](docs/captura-enfoque.png) | ![Descanso](docs/captura-descanso.png) |
 
-> Proyecto de la asignatura *20.671 Desarrollo de aplicaciones interactivas* (Grado de
+> Proyecto de la asignatura *Desarrollo de aplicaciones interactivas* (Grado de
 > Multimedia, UOC) · Reto R3 «Extensión web» · noviembre de 2026.
 
 ---
