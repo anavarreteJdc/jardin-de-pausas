@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Jardín de pausas</title>
+    <link rel="stylesheet" href="style.css" />
+    <!--
+      En Manifest V3 no se puede cargar código remoto (CDN), por eso p5.js va
+      dentro de la propia extensión, en libs/. Tampoco se permiten scripts
+      escritos dentro del HTML: todo el JavaScript está en ficheros aparte.
+    -->
+    <script src="libs/p5.min.js"></script>
+    <script src="estado.js"></script>
+    <script src="jardin.js"></script>
+    <script src="sketch.js"></script>
+  </head>
+  <body>
+    <main id="app">
+      <header class="cabecera">
+        <h1>Jardín de pausas</h1>
+        <span class="subtitulo">enfoque · descanso</span>
+      </header>
+
+      <!-- Aquí p5.js coloca el canvas de 300 x 150 -->
+      <div id="lienzo"></div>
+
+      <!-- Aquí p5.js crea los botones, el slider y los textos (ver crearInterfaz) -->
+      <section id="controles"></section>
+
+      <footer class="autoria">Arturo Navarrete Jiménez de Cisneros · UOC 2026</footer>
+    </main>
+  </body>
+</html>

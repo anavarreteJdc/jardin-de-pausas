@@ -1,0 +1,225 @@
+/*
+ * «Jardín de pausas» · estilos del popup
+ * Misma paleta que «Jardín de horas» (R1): azul tinta, polen amarillo y crema.
+ */
+
+/* Fuentes locales (las mismas de la R1, licencia SIL OFL). */
+@font-face {
+  font-family: 'DM Serif Display';
+  src: url('assets/fonts/DMSerifDisplay-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Space Mono';
+  src: url('assets/fonts/SpaceMono-Regular.ttf') format('truetype');
+}
+
+:root {
+  --tinta: #141a33;
+  --tinta-2: #1f2747;
+  --tinta-3: #2b3560;
+  --polen: #ffd35c;
+  --crema: #fff6e9;
+  --crema-suave: rgba(255, 246, 233, 0.65);
+  --verde: #5fa36a;
+  --coral: #f26b6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--tinta);
+  color: var(--crema);
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+}
+
+#app {
+  width: 324px;
+  padding: 10px 12px 8px;
+}
+
+/* ---------- Cabecera ---------- */
+.cabecera {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.cabecera h1 {
+  margin: 0;
+  font-family: 'DM Serif Display', serif;
+  font-weight: normal;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+}
+.subtitulo {
+  font-size: 10px;
+  color: var(--crema-suave);
+}
+
+/* ---------- Canvas ---------- */
+#lienzo {
+  width: 300px;
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--tinta-3);
+}
+#lienzo canvas {
+  display: block;
+}
+
+/* ---------- Controles (creados con p5.js) ---------- */
+#controles {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.fila {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Pestañas Enfoque / Descanso */
+.pestanas {
+  display: flex;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--tinta-2);
+}
+.pestana {
+  flex: 1;
+  padding: 5px 0;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--crema-suave);
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.pestana:hover {
+  color: var(--crema);
+}
+.pestana.activa {
+  background: var(--crema);
+  color: var(--tinta);
+}
+.pestana.activa.descanso {
+  background: #3cc4b3;
+}
+
+/* Slider de duración */
+.etiqueta {
+  width: 62px;
+  color: var(--crema-suave);
+  font-size: 11px;
+}
+.valor {
+  width: 48px;
+  text-align: right;
+  font-size: 11px;
+}
+input[type='range'] {
+  flex: 1;
+  accent-color: var(--polen);
+  cursor: pointer;
+}
+input[type='range']:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Botones principales */
+.boton {
+  flex: 1;
+  padding: 8px 0;
+  border: 1px solid var(--tinta-3);
+  border-radius: 8px;
+  background: var(--tinta-2);
+  color: var(--crema);
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: transform 0.1s, background 0.2s;
+}
+.boton:hover {
+  background: var(--tinta-3);
+}
+.boton:active {
+  transform: scale(0.97);
+}
+.boton.principal {
+  flex: 1.6;
+  border-color: var(--polen);
+  background: var(--polen);
+  color: var(--tinta);
+  font-weight: bold;
+}
+.boton.principal:hover {
+  background: #ffdf85;
+}
+.boton.principal.en-marcha {
+  background: transparent;
+  color: var(--polen);
+}
+
+/* Mensajes al usuario */
+.mensaje {
+  min-height: 30px;
+  margin: 0;
+  padding: 6px 8px;
+  border-left: 2px solid var(--polen);
+  border-radius: 0 6px 6px 0;
+  background: var(--tinta-2);
+  font-size: 10.5px;
+  line-height: 1.4;
+}
+.mensaje:empty {
+  visibility: hidden;
+}
+
+/* Resumen del día */
+.datos {
+  justify-content: space-between;
+  font-size: 10.5px;
+  color: var(--crema-suave);
+}
+.enlace {
+  padding: 2px 4px;
+  border: none;
+  background: none;
+  color: var(--crema-suave);
+  font-family: inherit;
+  font-size: 10px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.enlace:hover,
+.enlace.confirmar {
+  color: var(--coral);
+}
+
+/* Accesibilidad: foco visible al navegar con teclado */
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--polen);
+  outline-offset: 2px;
+}
+
+/* ---------- Pie ---------- */
+.autoria {
+  margin-top: 8px;
+  font-size: 9.5px;
+  color: var(--crema-suave);
+  text-align: center;
+}
